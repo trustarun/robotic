@@ -1,0 +1,221 @@
+Case 1: wrong inputs
+-----------------------
+Input : anthing
+Output:
+...Invalid Inputs...
+Allowed Inputs : 
+place X,Y,F ; move ; left ; right ; report
+
+
+**********************************************************
+
+Case 2: Valid Inputs are case insenstive
+----------------------------------------
+Input : PLACE 2,3 , north
+Output:
+robot is at : 2, 3, north
+
+
+Input : place 2,3 , north
+Output:
+robot is at : 2, 3, north
+
+
+
+Input : PLacE 2,3 , north
+Output:
+robot is at : 2, 3, north
+
+
+Input : MoVe
+Output:
+robot is at : 2, 4, north
+
+
+**********************************************************
+Case 3: Other valid commands given before PLACE command
+---------------------------------------------
+Input: move
+Output:
+robot is Inactive
+You must enter "place" command first to start the robot
+
+
+Input: left
+Output:
+robot is Inactive
+You must enter "place" command first to start the robot
+
+Input: report
+Output:
+robot is Inactive
+You must enter "place" command first to start the robot
+
+
+
+**********************************************************
+
+
+Case 4: Place command given with wrong number of arguments
+_________________________________________________________
+
+Input: place 2 ,3 ,north, south
+
+Output:
+...wrong no. of argument for place...
+place need 3 arguments: X, Y, F
+
+
+Input: place 2 ,3
+Output:
+...wrong no. of argument for place...
+place need 3 arguments: X, Y, F
+
+
+**************************************************
+
+
+Case 5: Place command given with Cordinate outside table[5 x 5]
+----------------------------------------------------------------
+
+Input: place 5 6 west
+Output:
+...Cordinates out of table...
+reset cordinates to Place it on table
+
+Input: place 6 3 north
+Output:
+...Cordinates out of table...
+reset cordinates to Place it on table
+
+Input: place 8 6 north
+Output:
+...Cordinates out of table...
+reset cordinates to Place it on table
+
+Input: place -1 3 north
+Output:
+...Cordinates out of table...
+reset cordinates to Place it on table
+
+
+***********************************************
+
+Case 6: Place command given with wrong direction i,e not in north, east, west, south
+------------------------------------------------------------------------------------
+
+Input: place 2 3 xyz
+Output:
+...wrong direection...
+use: north, south, east, west
+
+
+Input: place 2 3 noth
+Output:
+...wrong direection...
+use: north, south, east, west
+
+Input: place 2 3 eaast
+Output:
+...wrong direection...
+use: north, south, east, west
+
+
+********************************************
+
+Case 7: Place command with non integer cordinate
+------------------------------------------------
+
+Input: place x 3 north
+Output:
+...wrong cordinate...
+place cordinate takes only integer value
+
+
+Input: place x y north
+Output:
+...wrong cordinate...
+place cordinate takes only integer value
+
+*********************************************
+
+Case 8: Prevent robot to fall from move outside table
+-----------------------------------------------------
+
+Input: place 2 3 north
+	   move
+       move
+       move
+Output:
+...wrong move...
+change direction and move
+
+
+Input: place 2 3 west
+	   move
+       move
+       move
+Output:
+...wrong move...
+change direction and move	
+
+
+******************************************
+
+Case 9: Robot is allowed to move from edge of table after changing direction
+----------------------------------------------------------------------------
+Input: place 2 3 west
+	   move
+       move
+       report
+       move
+       left
+       move
+       move
+       report
+Output:
+robot is at : 0, 1, south
+
+******************************************
+
+Case 10: direction change properly with left command i,e anticlockwise
+Input: place 2,3 west
+       left
+       left
+
+Output:
+robot is at : 2, 3, east
+
+
+Input: place 2,3 north
+       left
+       left
+Output:
+robot is at : 2, 3, south
+
+
+*************************************
+
+Case 11: direction change properly with right command i,e clockwise
+Input: place 2,3 west
+       right
+       right
+
+Output:
+robot is at : 2, 3, south
+
+
+Input: place 2,3 north
+       right
+       right
+Output:
+robot is at : 2, 3, west
+
+******************************************
+
+Case 12 : User exit out of the game at any time with stop command
+Input: stop
+Output:exit out of the game
+
+
+
